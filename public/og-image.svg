@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="50%" stop-color="#1a0033"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <radialGradient id="m" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff00e5" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#8b00ff" stop-opacity="0.0"/>
+    </radialGradient>
+    <radialGradient id="c" cx="80%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#00fff2" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#0a0a0f" stop-opacity="0.0"/>
+    </radialGradient>
+    <linearGradient id="tx" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff00e5"/>
+      <stop offset="35%" stop-color="#00fff2"/>
+      <stop offset="65%" stop-color="#c6ff00"/>
+      <stop offset="100%" stop-color="#ff00e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#m)"/>
+  <rect width="1200" height="630" fill="url(#c)"/>
+  <text x="60" y="160" fill="#00fff2" font-family="ui-sans-serif, system-ui" font-size="22" letter-spacing="6">FRONTEND · MOTION · INTERFACES</text>
+  <text x="60" y="380" fill="url(#tx)" font-family="ui-sans-serif, system-ui" font-size="140" font-weight="700" letter-spacing="-2">AURORA VALE</text>
+  <text x="60" y="460" fill="#e7e7ee" font-family="ui-sans-serif, system-ui" font-size="36">Interfaces that move, glow and respond.</text>
+  <text x="60" y="580" fill="#8a8aa3" font-family="ui-sans-serif, system-ui" font-size="20">portfolio-rave · Next.js 14 · Three.js · Framer Motion · GSAP</text>
+</svg>

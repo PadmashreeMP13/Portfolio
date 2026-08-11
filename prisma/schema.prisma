@@ -1,0 +1,65 @@
+// Prisma schema for portfolio-rave
+// Run: npx prisma generate (for the client) and npx prisma migrate dev (after pointing DATABASE_URL to MySQL).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(100)
+  email     String   @db.VarChar(160)
+  subject   String   @db.VarChar(200)
+  message   String   @db.Text
+  createdAt DateTime @default(now()) @db.Timestamp(3)
+
+  @@index([createdAt])
+  @@map("contact_messages")
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(160)
+  description String   @db.Text
+  techStack   String   @db.VarChar(500) // comma-separated tags
+  imageUrl    String?  @db.VarChar(500)
+  liveUrl     String?  @db.VarChar(500)
+  repoUrl     String?  @db.VarChar(500)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now()) @db.Timestamp(3)
+
+  @@index([featured, createdAt])
+  @@map("projects")
+}
+
+model Experience {
+  id          Int      @id @default(autoincrement())
+  company     String   @db.VarChar(160)
+  role        String   @db.VarChar(160)
+  startDate   DateTime
+  endDate     DateTime?
+  description String   @db.Text
+  techStack   String   @db.VarChar(500)
+  createdAt   DateTime @default(now()) @db.Timestamp(3)
+
+  @@index([startDate])
+  @@map("experiences")
+}
+
+model Education {
+  id          Int      @id @default(autoincrement())
+  degree      String   @db.VarChar(200)
+  institution String   @db.VarChar(200)
+  startDate   DateTime
+  endDate     DateTime?
+  achievements String  @db.Text
+  createdAt   DateTime @default(now()) @db.Timestamp(3)
+
+  @@index([startDate])
+  @@map("education")
+}
